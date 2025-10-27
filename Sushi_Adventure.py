@@ -131,7 +131,7 @@ def main():
     
     # Display result with condition.
     if toppingChoice == 4:
-        print("\n{colors['MAGENTA']Classic choice, keeping it simple!{colors['RESET']}")
+        print(f"\n{colors['MAGENTA']}Classic choice, keeping it simple!{colors['RESET']}")
     else:
         print(f"\n{colors['MAGENTA']}You chose {toppingNames[toppingChoice]}!{colors['RESET']}")
     
