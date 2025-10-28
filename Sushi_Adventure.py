@@ -4,7 +4,7 @@
 
 # How to play:
 # 1. The player will make 4 decisions: rice, filling, topping, and preparation style.
-# 2. At the end, their sushi will be visually displayed.
+# 2. At the end, based on all decisions made, the sushi creation will be visually displayed.
 
 # ------------------------------
 # Use ANSI color sequences to format the text, and the final sushi's visual.
@@ -25,7 +25,7 @@ BOLD = "\033[1m"
 
 # ------------------------------
 # Define sushi ingredient options and visuals.
-# Each ingredient type has a list of names, a list of visual “patterns,”
+# Each ingredient type has a list of names, a list of visual patterns,
 # and a list of corresponding colors for later visual representation.
 
 # Rice options.
@@ -70,7 +70,7 @@ def main():
           "topping, and style, to create your very own delicious sushi roll.\n"
           "Let's make something delicious together!\n")
     
-    # Ask for player’s name.
+    # Ask for the player’s name.
     playerName = input("What is your chef name? ").strip()
     # If player doesn't type a name, default to "chef".
     if playerName == "":
@@ -93,7 +93,7 @@ def main():
             riceChoice = int(choice) - 1
             break
         else:
-            print("  Please enter 1, 2, or 3.")
+            print("Please enter 1, 2, or 3.")
     
     print(f"\n{colors['MAGENTA']}You chose {riceNames[riceChoice]}!{colors['RESET']}")
     
@@ -110,7 +110,7 @@ def main():
             fillingChoice = int(choice) - 1
             break
         else:
-            print("  Please enter a number between 1 and 5.")
+            print("Please enter a number between 1 and 5.")
     
     print(f"\n{colors['MAGENTA']}You chose {fillingNames[fillingChoice]}!{colors['RESET']}")
     
@@ -127,9 +127,9 @@ def main():
             toppingChoice = int(choice) - 1
             break
         else:
-            print("  Please enter a number between 1 and 5.")
+            print("Please enter a number between 1 and 5.")
     
-    # Display result with condition.
+    # Display the topping selection result based on user choice.
     if toppingChoice == 4:
         print(f"\n{colors['MAGENTA']}Classic choice, keeping it simple!{colors['RESET']}")
     else:
@@ -139,7 +139,7 @@ def main():
     displayHeader("STEP 4: Choose Your Style")
     print()
     
-    # Use for loop to display preparation options
+    # Use for loop to display preparation options.
     for i in range(len(prepNames)):
         print(f" [{i+1}] {prepNames[i]}")
     
@@ -149,14 +149,15 @@ def main():
             prepChoice = int(choice) - 1
             break
         else:
-            print("  Please enter 1 or 2.")
+            print("Please enter 1 or 2.")
     
     print(f"\n{colors['MAGENTA']}You chose {prepNames[prepChoice]}!{colors['RESET']}")
     
     # Creating the sushi.
     print(f"\n{colors['GREEN']}{BOLD}...Creating your SUSHI...{colors['RESET']}\n")
-    
-    # Display ingredient summary.
+
+    # ------------------------------
+    # Display ingredient summary header.
     print(f"\n{colors['CYAN']}{BOLD}--- YOUR INGREDIENTS ---{colors['RESET']}\n")
     
     # Print rice information.
@@ -232,12 +233,12 @@ def main():
     # ------------------------------
     # Ending message.
     print(f"\n {colors['CYAN']}{BOLD}Congratulations, Chef {playerName}!{colors['RESET']}")
-    print(f"\n {colors['CYAN']}{BOLD}Enjoy Your Sushi!{colors['RESET']}")
+    print(f"\n {colors['CYAN']}{BOLD}Great job! Your sushi looks delicious!{colors['RESET']}")
     print("\n" + "-"*60 + "\n")
     print("\n Thank you for playing SUSHI ADVENTURE! \n")
 
 # ------------------------------
 # Program execution.
-# This ensures the game only runs when the script is executed directly.
+# Ensures the game only runs when the script is executed directly.
 if __name__ == "__main__":
     main()
