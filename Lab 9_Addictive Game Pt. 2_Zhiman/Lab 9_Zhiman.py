@@ -2,8 +2,8 @@
 # I added 3 nonaddictive features in this project.
 
 # 1. Positive Disengagement: 
-# After 90 seconds of gameplay, a pop-up message appears to celebrate the player’s 
-# progress and suggest taking a short break.
+# After 90 seconds of gameplay, a pop-up message appears to show the progress
+# and suggest taking a short break.
 
 # 2. Negative Disengagement: 
 # If the player chooses not to take a break after 90 seconds, the game becomes harder:
@@ -40,7 +40,6 @@ DARK_RED = (139, 0, 0)
 BROWN = (139, 69, 19)
 LIGHT_BROWN = (210, 180, 140)
 GRAY = (128, 128, 128)
-GREEN = (34, 139, 34)
 
 # Frame rate
 FPS = 60
@@ -50,7 +49,7 @@ DISTRACTOR_SPAWN_THRESHOLD = 5   # After every 5 points, a new distractor (burnt
 DISTRACTORS_PER_SPAWN = 1   # Number of distractors added each time the threshold is reached.
 BASE_SPEED = 2   # The initial movement speed of distractors.
 SPEED_INCREMENT = 0.3   # The speed of distractors move as the player's score increases.
-MAX_SPEED = 8   # Distractors move faster as the player’s score rises, up to MAX_SPEED.
+MAX_SPEED = 8   # Distractors move faster and up to MAX_SPEED.
 ENGAGEMENT_PERIOD = 90   # Define the engagement period.
 DOUBLE_CLICK_WINDOW = 0.5   # Maximum time interval (in secs) between two clicks to count as a double-click.
 
@@ -91,7 +90,7 @@ def create_cookie_surface(size=100):
     pygame.draw.circle(surf, LIGHT_BROWN, (center, center), center - 2)
     pygame.draw.circle(surf, BROWN, (center, center), center - 2, 3)
     
-    # Place dark “chocolate chip” circles in a few fixed positions.
+    # Place the dark chocolate chip circles in a few fixed positions.
     chip_positions = [
         (0.3, 0.3), (0.7, 0.3), (0.5, 0.5),
         (0.3, 0.7), (0.7, 0.7), (0.2, 0.5), (0.8, 0.5)
@@ -125,7 +124,7 @@ def create_burnt_cookie_surface(size=100):
 
 # Load the main cookie image or draw one.
 cookie_img = load_cookie_image("cookie.png", 100)
-# Create a list with one “burnt cookie” to use as distractors.
+
 distractor_imgs = [create_burnt_cookie_surface(100)]
 
 # ========================================
@@ -221,7 +220,7 @@ def move_distractors():
         rect.x += dx
         rect.y += dy
         
-        # If they hit an edge, they “bounce” by reversing direction.
+        # If they hit an edge, then they bounce by reversing direction.
         if rect.left <= 0 or rect.right >= SCREEN_WIDTH:
             d[1] *= -1
         if rect.top <= 0 or rect.bottom >= SCREEN_HEIGHT:
