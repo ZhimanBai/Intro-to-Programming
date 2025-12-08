@@ -33,6 +33,7 @@ Tree height is scaled according to the average IMDb rating of movies released in
 Bulbs are placed randomly within the tree shape and colored according to their rating category.  
 
 ===Instructions to Run the Code===
+
 Make sure the following files are in the same directory:
 1. BAI_data_art.py (main loop of visualization)
 2. visual_objects.py (classes)
